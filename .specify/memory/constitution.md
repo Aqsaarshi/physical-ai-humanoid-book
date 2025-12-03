@@ -1,55 +1,58 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 0.0.0 -> 1.0.0
+Modified principles: None (initial creation)
+Added sections: Key Standards, Project Constraints
+Removed sections: None
+Templates requiring updates:
+- .specify/templates/plan-template.md: ⚠ pending
+- .specify/templates/spec-template.md: ⚠ pending
+- .specify/templates/tasks-template.md: ⚠ pending
+- .specify/templates/commands/*.md: ⚠ pending
+- README.md: ⚠ pending
+- docs/quickstart.md: ⚠ pending
+Follow-up TODOs: None
+-->
+# University-level textbook on Physical AI & Humanoid Robotics Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Scientific Accuracy
+Scientific accuracy with verified robotics and AI concepts
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Clarity for Students
+Clarity for students with beginner background in AI/Robotics
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Practical Application
+Practical application through hands-on tasks and real examples
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Ethical and Responsible Use
+Ethical and responsible use of robotics technologies
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Industry Relevance
+Industry relevance focusing on future job skills and automation trends
 
-### [PRINCIPLE_6_NAME]
+## Key Standards
 
+- Minimum 10–15 chapters with consistent structure
+- Each chapter must include: explanation, real-world example, a diagram, a mini practical task, and a quiz
+- References required in APA or IEEE style
+- Glossary, Index, and Appendix mandatory
+- Visuals must be self-created or properly credited
+- Plagiarism check: 0% tolerance before submission
 
-[PRINCIPLE__DESCRIPTION]
+## Project Constraints
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Total pages: 80–120
+- Language: Simple English + technical keywords
+- Final deliverable: PDF format with embedded visuals and references
+- Review from at least one domain expert before final submission
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- Students can understand and apply fundamental Physical AI concepts
+- Enables educators to teach a complete Physical AI course
+- All technical information correct and traceable to reliable sources
+- Book passes both technical and academic review with zero plagiarism
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-03 | **Last Amended**: 2025-12-03
