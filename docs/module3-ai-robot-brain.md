@@ -1,0 +1,3 @@
+# Module 3: The AI-Robot Brain (NVIDIA Isaac)
+
+NVIDIA Isaac is a comprehensive platform for accelerating the development and deployment of AI-powered robots. It provides a suite of tools, SDKs, and a robotics simulation platform to build, train, and test advanced robotic applications. Isaac integrates perception, navigation, manipulation, and human-robot interaction capabilities, leveraging NVIDIA's GPU technology to deliver high-performance AI inference and complex simulation environments, essentially acting as the intelligent 'brain' for next-generation robots.

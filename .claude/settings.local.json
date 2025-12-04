@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe:*)",
+      "Bash(ls:*)",
+      "Bash(git fetch:*)",
+      "Bash(.specify/scripts/powershell/create-new-feature.ps1:*)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Bash(npm install)",
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1:*)",
+      "Bash(history_dir=\"history/prompts/002-physical-ai-robotics-textbook/\")",
+      "Bash(title=\"Update tasks for new textbook modules\")",
+      "Bash(stage=\"tasks\")",
+      "Bash(feature_name=\"002-physical-ai-robotics-textbook\")",
+      "Bash(prompt_text=\"\"\"You have already created 5 chapters:\n\nIntroduction to Physical AI\n\nRobotics Fundamentals\n\nSensing and Perception\n\nActuation and Control\n\nRobot Kinematics and Dynamics\n\nDo NOT modify, rewrite, or touch these 5 chapters in any way.\nThey are complete and final.\n\nNow create 4 new modules only, each with ONE short explanatory paragraph only.\nStrict rules:\n\nNo examples\n\nNo diagrams\n\nNo quizzes\n\nNo tasks\n\nNo references\n\nOnly 1 short paragraph per module\n\nClear, simple language\n\nNew Required Modules:\n\nModule 1: The Robotic Nervous System (ROS 2)\n\nModule 2: The Digital Twin (Gazebo & Unity)\n\nModule 3: The AI-Robot Brain (NVIDIA Isaac)\n\nModule 4: Vision-Language-Action (VLA)\n\nOutput format:\nModule Number + Name\nOne short paragraph only\n\nDo not add anything extra.\"\"\")",
+      "Bash(response_text=\"Found existing tasks in specs/002-physical-ai-robotics-textbook/tasks.md for creating the 4 new modules, which align with the user''s request.\")",
+      "Bash(__NEW_LINE__ bash_command=\".specify/scripts/bash/create-phr.sh --title \"$title\" --stage \"$stage\" --feature \"$feature_name\" --json\")",
+      "Bash(__NEW_LINE__ echo \"Running PHR script: $bash_command\")",
+      "Bash($bash_command:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

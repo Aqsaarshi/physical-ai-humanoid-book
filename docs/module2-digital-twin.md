@@ -1,0 +1,3 @@
+# Module 2: The Digital Twin (Gazebo & Unity)
+
+Digital twins are virtual models designed to accurately reflect a physical object or system, updating in real-time with data from their physical counterparts. In robotics, platforms like Gazebo and Unity facilitate the creation of these digital twins, offering realistic simulation environments where robots can be designed, tested, and optimized without the need for physical hardware. This capability is crucial for rapid prototyping, algorithm development, and training AI models in a safe, controlled, and cost-effective manner.

@@ -1,0 +1,3 @@
+# Module 1: The Robotic Nervous System (ROS 2)
+
+ROS 2 (Robot Operating System 2) provides a flexible framework for writing robot software. It encompasses a collection of tools, libraries, and conventions designed to simplify the process of creating complex and robust robot applications across diverse hardware and environments. Its distributed architecture supports modular development, enabling components to communicate seamlessly and be deployed independently, making it ideal for scalable robotic systems.

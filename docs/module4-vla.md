@@ -1,0 +1,3 @@
+# Module 4: Vision-Language-Action (VLA)
+
+Vision-Language-Action (VLA) models represent a frontier in AI, integrating capabilities from computer vision, natural language processing, and robotic control. These models enable robots to understand complex human commands, interpret visual information from their environment, and translate this understanding into physical actions. By combining visual perception with linguistic comprehension, VLA systems empower robots to interact more intuitively and effectively with the real world, performing tasks that require nuanced understanding and flexible execution.
