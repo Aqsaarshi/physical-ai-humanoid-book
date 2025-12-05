@@ -10,7 +10,7 @@ Target audience: Undergraduate students and educators new to AI & robotics
 Focus: Core concepts of Physical AI and humanoid robotics, practical applications, hands-on tasks, and broader ethical considerations (societal impact, bias, privacy, accountability, long-term implications)
 
 Success criteria:
-- 10–15 chapters covering theory, examples, diagrams, mini tasks, and quizzes
+- 5 chapters covering theory, examples, diagrams, mini tasks, and quizzes
 - Accurate technical content with proper references (APA or IEEE)
 - Glossary, index, and appendix included
 - Visuals self-created or properly credited
@@ -83,7 +83,7 @@ A student completes a quiz at the end of a chapter to assess their understanding
 
 ### Functional Requirements
 
-- **FR-001**: The textbook MUST contain a minimum of 10 chapters and a maximum of 15 chapters.
+- **FR-001**: The textbook MUST contain exactly 5 chapters.
 - **FR-002**: Each chapter MUST include a clear explanation of concepts.
 - **FR-003**: Each chapter MUST provide a real-world example.
 - **FR-004**: Each chapter MUST feature a relevant diagram.
