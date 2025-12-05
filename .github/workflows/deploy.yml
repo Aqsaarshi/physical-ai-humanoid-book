@@ -22,11 +22,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Build Docusaurus site
+      # 4️⃣ Set deployment environment
+      - name: Set DEPLOY_ENV
+        run: echo "DEPLOY_ENV=GITHUB" >> $GITHUB_ENV
+
+      # 5️⃣ Build Docusaurus site
       - name: Build
         run: npm run build
 
-      # 5️⃣ Deploy to GitHub Pages
+      # 6️⃣ Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

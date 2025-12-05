@@ -10,8 +10,11 @@ const config = {
   tagline: 'An Open Educational Resource for Advanced Robotics',
   favicon: 'img/favicon.ico',
 
-  url: 'https://Aqsaarshi.github.io',
-  baseUrl: '/',
+  // ✅ Deployment URL settings
+  url: process.env.DEPLOY_ENV === 'VERCEL' 
+       ? 'https://physical-ai-humanoid-book.vercel.app' 
+       : 'https://Aqsaarshi.github.io',
+  baseUrl: process.env.DEPLOY_ENV === 'VERCEL' ? '/' : '/physical-ai-humanoid-book/',
 
   organizationName: 'Aqsaarshi',
   projectName: 'physical-ai-humanoid-book',
@@ -74,34 +77,22 @@ const config = {
             items: [
               {
                 label: 'Textbook',
-                to: 'docs/01-introduction', // .md hata diya
+                to: 'docs/01-introduction',
               },
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+              { label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/docusaurus' },
+              { label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' },
+              { label: 'Twitter', href: 'https://twitter.com/docusaurus' },
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Aqsaarshi/physical-ai-humanoid-book',
-              },
+              { label: 'GitHub', href: 'https://github.com/Aqsaarshi/physical-ai-humanoid-book' },
             ],
           },
         ],
