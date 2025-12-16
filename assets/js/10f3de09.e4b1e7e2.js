@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkphysical_ai_humanoid_book=globalThis.webpackChunkphysical_ai_humanoid_book||[]).push([[725],{4220(o){o.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"robotics-textbook"}')}}]);
