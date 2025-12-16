@@ -1,6 +1,6 @@
 # Tasks: Physical AI & Humanoid Robotics Textbook - New Modules
 
-**Feature Branch**: `002-physical-ai-robotics-textbook` | **Date**: 2025-12-05
+**Feature Branch**: / | **Date**: 2025-12-05
 **Goal**: Create 4 new modules, each with one short explanatory paragraph. The existing 5 chapters are complete and final.
 
 ## Phase 1: Setup
@@ -17,13 +17,7 @@
 - [X] T007 [P] Create `docs/chapter3.md` with outline for "Sensing and Perception"
 - [X] T008 [P] Create `docs/chapter4.md` with outline for "Actuation and Control"
 - [X] T009 [P] Create `docs/chapter5.md` with outline for "Robot Kinematics and Dynamics"
-- [X] T010 [P] Create `docs/chapter6.md` with outline for "Path Planning and Navigation"
-- [X] T011 [P] Create `docs/chapter7.md` with outline for "Robot Learning and Adaptation"
-- [X] T012 [P] Create `docs/chapter8.md` with outline for "Human-Robot Interaction"
-- [X] T013 [P] Create `docs/chapter9.md` with outline for "Bio-Inspired Robotics"
-- [X] T014 [P] Create `docs/chapter10.md` with outline for "Ethical Considerations in Robotics"
-- [X] T015 [P] Create `docs/chapter11.md` with outline for "Advanced Topics: Soft Robotics and Swarm Intelligence"
-- [X] T016 [P] Create `docs/chapter12.md` with outline for "Future of Physical AI and Humanoids"
+
 
 ## Phase 3: Chapter Content Generation (Completed Chapters 1-5)
 
@@ -69,10 +63,10 @@
 
 ## Phase 4: New Modules
 
-- [ ] T047 [P] Create `docs/module1-ros2.md` with explanation for "The Robotic Nervous System (ROS 2)"
-- [ ] T048 [P] Create `docs/module2-digital-twin.md` with explanation for "The Digital Twin (Gazebo & Unity)"
-- [ ] T049 [P] Create `docs/module3-ai-robot-brain.md` with explanation for "The AI-Robot Brain (NVIDIA Isaac)"
-- [ ] T050 [P] Create `docs/module4-vla.md` with explanation for "Vision-Language-Action (VLA)"
+- [X] T047 [P] Create `docs/module1-ros2.md` with explanation for "The Robotic Nervous System (ROS 2)"
+- [X] T048 [P] Create `docs/module2-digital-twin.md` with explanation for "The Digital Twin (Gazebo & Unity)"
+- [X] T049 [P] Create `docs/module3-ai-robot-brain.md` with explanation for "The AI-Robot Brain (NVIDIA Isaac)"
+- [X] T050 [P] Create `docs/module4-vla.md` with explanation for "Vision-Language-Action (VLA)"
 
 ---
 

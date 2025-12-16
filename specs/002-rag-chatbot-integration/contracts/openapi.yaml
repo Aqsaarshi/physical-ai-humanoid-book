@@ -1,0 +1,163 @@
+
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API
+  version: 1.0.0
+  description: API for integrating a RAG chatbot into a Docusaurus book.
+
+servers:
+  - url: /api/v1
+    description: Primary API server
+
+paths:
+  /chat/query:
+    post:
+      summary: Submit a query to the chatbot
+      description: Sends a user question to the RAG chatbot and receives a streamed response.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: string
+                  format: uuid
+                  description: Optional ID of an existing conversation to continue.
+                user_id:
+                  type: string
+                  description: Identifier for the user making the query.
+                question:
+                  type: string
+                  description: The user's question.
+                selected_text:
+                  type: object
+                  nullable: true
+                  properties:
+                    text:
+                      type: string
+                      description: Optional selected text from the Docusaurus book to narrow the context.
+                    source_metadata:
+                      type: object
+                      properties:
+                        chapter:
+                          type: string
+                        section:
+                          type: string
+                      description: Metadata for the selected text's origin.
+      responses:
+        '200':
+          description: Streamed chatbot response.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                description: Server-Sent Events (SSE) stream of chatbot responses.
+        '400':
+          description: Invalid request or missing parameters.
+        '500':
+          description: Internal server error.
+
+  /chat/history/{user_id}:
+    get:
+      summary: Retrieve chat history for a user
+      description: Fetches the entire conversation history for a given user.
+      parameters:
+        - in: path
+          name: user_id
+          schema:
+            type: string
+          required: true
+          description: Identifier for the user whose chat history is to be retrieved.
+      responses:
+        '200':
+          description: A list of chat conversations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Conversation'
+        '404':
+          description: User not found or no chat history.
+        '500':
+          description: Internal server error.
+
+  /chat/history/{user_id}/{conversation_id}:
+    get:
+      summary: Retrieve a specific conversation
+      description: Fetches a specific chat conversation by ID for a given user.
+      parameters:
+        - in: path
+          name: user_id
+          schema:
+            type: string
+          required: true
+          description: Identifier for the user.
+        - in: path
+          name: conversation_id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Identifier for the conversation.
+      responses:
+        '200':
+          description: A specific chat conversation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+        '404':
+          description: Conversation not found.
+        '500':
+          description: Internal server error.
+
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        conversation_id:
+          type: string
+          format: uuid
+        sender:
+          type: string
+          enum: [user, bot]
+        content:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        citations:
+          type: array
+          items:
+            type: object
+            properties:
+              chapter:
+                type: string
+              section:
+                type: string
+
+    Conversation:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        last_active_time:
+          type: string
+          format: date-time
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'

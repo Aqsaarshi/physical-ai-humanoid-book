@@ -17,21 +17,26 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: Python 3.11+ (FastAPI), TypeScript (React/Docusaurus)
+**Primary Dependencies**: FastAPI, OpenAI SDK, Qdrant Client, Neon psycopg2, React, Docusaurus, Tailwind CSS
+**Storage**: Qdrant (vector DB), Neon PostgreSQL (chat history)
+**Testing**: pytest (backend), Jest/React Testing Library (frontend)
+**Target Platform**: Web (Docusaurus/React) and Linux Server (FastAPI)
+**Project Type**: web
+**Performance Goals**: Fast chat response times (<1s p95 for API, <2s end-to-end), efficient document retrieval, streamed responses
+**Constraints**: Strict adherence to 'no hallucination' and 'citation required' principles, Qdrant Free Tier limits, Neon Serverless free tier limits, Docusaurus integration constraints
+**Scale/Scope**: Single Docusaurus book, moderate user traffic (book readers), ~100-200 pages of content
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Clean Architecture**: Ensure clear separation of concerns, testability, and maintainability; components are loosely coupled and highly cohesive.
+- [ ] **Document-Based Retrieval (No Hallucination & Citation)**: Responses ONLY generated from retrieved document store; actively prevent hallucination; provide clear citations.
+- [ ] **Safety and Scope Adherence**: No answers outside Docusaurus book content (unless explicit selected text); detect and respond to out-of-scope queries.
+- [ ] **Context-First Reasoning**: Prioritize retrieved context over general LLM knowledge; reasoning synthesizes information from document chunks.
+- [ ] **Clear Error Explanation**: Provide clear, concise, and actionable error messages; log internal errors comprehensively without exposing sensitive details.
+- [ ] **End-to-End Reproducibility**: RAG pipeline (ingestion to response) is reproducible, including data, code, and model configurations.
 
 ## Project Structure
 

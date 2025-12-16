@@ -44,3 +44,12 @@ build/
 # Misc
 temp_feature_description.json
 
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
+
+

@@ -1,0 +1,126 @@
+/* ChatbotPage.module.css */
+
+/* Main container */
+.mainContainer {
+  display: flex;
+  height: 80vh;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Sidebar */
+.chatHistory {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.chatHistory h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.chatHistory ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chatHistory li {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background 0.2s;
+}
+
+.chatHistory li:hover {
+  background-color: #e0e0e0;
+}
+
+/* Chat area */
+.chatWidget {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+/* Messages */
+.chat-message {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-message.bot {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+}
+
+/* Citations */
+.citations {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.citations ul {
+  padding-left: 1rem;
+}
+
+/* Input area */
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+.chat-input button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading & error messages */
+.loadingText {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.errorText {
+  color: red;
+  font-size: 0.95rem;
+}

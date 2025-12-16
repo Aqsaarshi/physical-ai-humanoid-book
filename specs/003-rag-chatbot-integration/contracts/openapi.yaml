@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API
+  version: 1.0.0
+  description: API for integrating a RAG chatbot into a Docusaurus book.
+
+servers:
+  - url: /api/v1
+    description: Primary API server
+
+paths:
+  /api/chat/query:
+    post:
+      summary: Submit a query to the chatbot
+      description: Sends a user question to the RAG chatbot and receives a response.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+                  format: uuid
+                  description: Optional ID of an existing session to continue.
+                query:
+                  type: string
+                  description: The user's question.
+                context_mode:
+                  type: string
+                  enum: [full-book, selected-text]
+                  description: Whether to search the full book or just selected text.
+                selected_text:
+                  type: object
+                  nullable: true
+                  properties:
+                    text:
+                      type: string
+                      description: Optional selected text from the Docusaurus book to narrow the context.
+                    source_metadata:
+                      type: object
+                      properties:
+                        chapter:
+                          type: string
+                        section:
+                          type: string
+                      description: Metadata for the selected text's origin.
+      responses:
+        '200':
+          description: Chatbot response with citations.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response_id:
+                    type: string
+                    format: uuid
+                  content:
+                    type: string
+                  citations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        chapter:
+                          type: string
+                        section:
+                          type: string
+        '400':
+          description: Invalid request or missing parameters.
+        '500':
+          description: Internal server error.
+
+  /api/chat/history/{session_id}:
+    get:
+      summary: Retrieve chat history for a session
+      description: Fetches the conversation history for a given session.
+      parameters:
+        - in: path
+          name: session_id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Identifier for the session whose history is to be retrieved.
+      responses:
+        '200':
+          description: The chat history for the session.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+        '404':
+          description: Session not found or no chat history.
+        '500':
+          description: Internal server error.
+
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        content:
+          type: string
+        sender:
+          type: string
+          enum: [user, bot]
+        timestamp:
+          type: string
+          format: date-time
+        citations:
+          type: array
+          items:
+            type: object
+            properties:
+              chapter:
+                type: string
+              section:
+                type: string
