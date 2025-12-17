@@ -7,7 +7,7 @@ interface ChatbotContainerProps {
   apiUrl?: string;
 }
 
-const ChatbotContainer: React.FC<ChatbotContainerProps> = ({ children, apiUrl = 'http://localhost:8000' }) => {
+const ChatbotContainer: React.FC<ChatbotContainerProps> = ({ children, apiUrl = 'https://aqsaarshi-backend-book.hf.space' }) => {
   // Fix: allow null initially or convert null to empty string
   const [selectedText, setSelectedText] = useState<string>('');
   const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +99,7 @@ const ChatbotContainer: React.FC<ChatbotContainerProps> = ({ children, apiUrl = 
               apiUrl={apiUrl ||
                 (typeof window !== 'undefined' && (window as any).env?.REACT_APP_API_URL) ||
                 (typeof process !== 'undefined' && process.env?.REACT_APP_API_URL) ||
-                'http://localhost:8000'}
+                'https://aqsaarshi-backend-book.hf.space'}
               initialSelectedText={selectedText}
             />
           </div>

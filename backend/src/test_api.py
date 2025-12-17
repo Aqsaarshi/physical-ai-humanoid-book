@@ -3,7 +3,7 @@ import json
 
 # Test the root endpoint
 try:
-    response = requests.get('http://127.0.0.1:8000/')
+    response = requests.get('https://aqsaarshi-backend-book.hf.space/')
     print("Root endpoint response:", response.status_code, response.json())
 except Exception as e:
     print("Error accessing root endpoint:", e)
@@ -14,7 +14,7 @@ try:
         "query": "Hello, how are you?",
         "context_mode": "full-book"
     }
-    response = requests.post('http://127.0.0.1:8000/api/chat/query',
+    response = requests.post('https://aqsaarshi-backend-book.hf.space/api/chat/query',
                            json=chat_data,
                            headers={'Content-Type': 'application/json'})
     print("Chat endpoint response:", response.status_code)

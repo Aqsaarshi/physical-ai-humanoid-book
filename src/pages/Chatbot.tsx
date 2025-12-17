@@ -6,7 +6,7 @@ const ChatbotPage = () => {
   const backendUrl =
     (typeof process !== 'undefined' && process.env?.REACT_APP_API_URL) ||
     (typeof window !== 'undefined' && (window as any).env?.REACT_APP_API_URL) ||
-    'http://localhost:8000';
+    'https://aqsaarshi-backend-book.hf.space';
 
   return (
     <div style={{ maxWidth: 800, margin: "0 auto", padding: "20px 0" }}>

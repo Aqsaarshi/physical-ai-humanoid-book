@@ -19,8 +19,8 @@ const config = {
   projectName: 'physical-ai-humanoid-book',
   trailingSlash: false,
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
 
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
@@ -52,7 +52,7 @@ const config = {
   ],
 
   customFields: {
-    backendUrl: process.env.BACKEND_URL || 'http://127.0.0.1:8000',
+    backendUrl: process.env.BACKEND_URL || 'https://aqsaarshi-backend-book.hf.space',
   },
 
   themeConfig: {
